@@ -2,77 +2,261 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Telluride Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telluride Research | Empowering Financial Analysis</title>
+  <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <meta name="description" content="Telluride Research delivers professional-grade equity and M&A insights for investors and finance professionals." />
+  <style>
+    /* === FONT + BASE === */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0e0e0e;
+      color: #d9d9d9;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #66b2ff;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      color: #9ccfff;
+      font-weight: 700;
+    }
+
+    /* === HEADER === */
+    header {
+      background: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo img {
+      height: 48px;
+    }
+
+    nav a {
+      margin-left: 24px;
+      font-weight: 600;
+      transition: color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(to bottom, #0a0a0a 0%, #111 100%);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #66b2ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.75rem;
+      border: 1px solid #66b2ff;
+      color: #66b2ff;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #66b2ff;
+      color: #000;
+    }
+
+    /* === ABOUT === */
+    .section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+
+    .columns p {
+      flex: 1;
+      min-width: 300px;
+      color: #c5c5c5;
+    }
+
+    /* === REPORTS === */
+    .reports-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .report-card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.2s ease;
+    }
+
+    .report-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* === CONTACT === */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      background: #121212;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.75rem;
+      background: #66b2ff;
+      border: none;
+      color: #000;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- === NAVIGATION === -->
   <header>
     <div class="logo">
       <img src="assets/logo.png" alt="Telluride Research Logo" />
     </div>
     <nav>
       <a href="#">Home</a>
-      <a href="#tracker">Stock Tracker</a>
       <a href="#reports">Reports</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- === HERO SECTION === -->
   <section class="hero">
     <h1>Empowering Financial Research</h1>
-    <p>Unlocking the potential of financial analysis with comprehensive reports and insights for intelligent investors.</p>
-    <a href="#contact" class="btn">Contact</a>
+    <p>Unlocking the potential of financial analysis with professional-grade reports, insights, and valuation coverage for modern investors.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
   </section>
 
-  <section class="about" id="about">
+  <!-- === ABOUT === -->
+  <section class="section" id="about">
     <h2>About Telluride Research</h2>
-    <div class="columns">
-      <p><strong>Our Mission</strong><br>
-      Telluride Research is dedicated to producing in-depth equity and M&A reports, providing actionable insights for investors.</p>
+    <div class="columns" style="margin-top: 2rem;">
+      <p><strong>Our Mission</strong><br> Telluride Research is dedicated to producing in-depth equity and M&A reports, offering actionable insights and expert-driven analysis to guide intelligent investment decisions.</p>
 
-      <p><strong>Our Approach</strong><br>
-      We apply DCFs, comps, and market research to deliver professional-grade insights across Technology, Energy, Industrials, and Healthcare.</p>
+      <p><strong>Our Approach</strong><br> We use advanced valuation models, DCFs, and sector research to produce institutional-quality insights. Our mission is to connect aspiring finance professionals with meaningful, data-driven research experiences.</p>
     </div>
   </section>
 
-  <section class="reports" id="reports">
-    <h2>Our Reports</h2>
-    <div class="report-grid">
-      <div>
+  <!-- === REPORTS === -->
+  <section class="section" id="reports">
+    <h2>Recent Reports</h2>
+    <div class="reports-grid" style="margin-top: 2rem;">
+      <div class="report-card">
         <h3>Constellation Energy Acquires Calpine</h3>
-        <p>$26.6B clean energy acquisition breakdown and analysis.</p>
+        <p>Comprehensive analysis of Constellation Energy’s $26.6B acquisition of Calpine Corporation—creating the largest independent clean energy producer in North America.</p>
       </div>
-      <div>
-        <h3>Okta, Inc: Identity Leader</h3>
-        <p>Buy rating & $128 target: Poised for long-term upside.</p>
+
+      <div class="report-card">
+        <h3>Okta, Inc: Identity Leader Poised for Growth</h3>
+        <p>Buy rating with a $128 target. In-depth coverage of Okta’s strategic positioning within the cybersecurity identity market.</p>
       </div>
-      <div>
-        <h3>Cameco Corporation</h3>
-        <p>Nuclear renaissance positioning and uranium sector outlook.</p>
+
+      <div class="report-card">
+        <h3>Cameco Corporation: Nuclear Renaissance</h3>
+        <p>Insight into Cameco’s expanding global uranium production capacity amid renewed global investment in nuclear energy.</p>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Connect with Us</h2>
-    <form>
-      <input type="text" placeholder="First Name" required />
-      <input type="text" placeholder="Last Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Message"></textarea>
+  <!-- === CONTACT === -->
+  <section class="section" id="contact">
+    <h2>Connect With Us</h2>
+    <p>Reach out if you’re interested in joining our analyst team, collaborating on research, or accessing our latest market insights.</p>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="first-name" placeholder="First Name" required />
+      <input type="text" name="last-name" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" rows="5"></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
 
+  <!-- === FOOTER === -->
   <footer>
-    <p>&copy; 2025 Telluride Research</p>
-    <div class="socials">
-      <!-- Add your social links here -->
-    </div>
+    <p>&copy; 2025 Telluride Research — All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
