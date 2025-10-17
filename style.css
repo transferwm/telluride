@@ -255,3 +255,10 @@ textarea{resize:vertical}
   .grid--3{grid-template-columns:1fr}
   .form__row{grid-template-columns:1fr}
   .footer__grid{grid-template-columns:1fr;
+
+/* === Hotfix: ensure thin header and hidden mobile sheet === */
+.nav.tv{ height:56px !important; }
+.nav__mobile[hidden]{ display:none !important; }
+
+/* Optional: slightly smaller brand mark in thin bar */
+.brand__logo{ height:28px; }
