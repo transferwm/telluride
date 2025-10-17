@@ -12,132 +12,122 @@
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<header class="nav tv" id="nav">
-  <!-- Left: brand -->
-  <a class="brand" href="/">
-    <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
-    <span class="brand__name">Telluride Research</span>
-  </a>
+  <!-- ===== NAVBAR (thin translucent, TradingView-like) ===== -->
+  <header class="nav tv" id="nav">
+    <!-- Left: brand -->
+    <a class="brand" href="/">
+      <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
+      <span class="brand__name">Telluride Research</span>
+    </a>
 
-  <!-- Center: search + primary links -->
-  <div class="nav__center">
-    <div class="search tv">
-      <svg width="18" height="18" viewBox="0 0 24 24" class="search__icon" aria-hidden="true">
-        <path fill="currentColor" d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18m11.707 3.293L17.314 16.9a10 10 0 1 0-1.414 1.414l4.393 4.393a1 1 0 0 0 1.414-1.414"/>
-      </svg>
-      <input type="search" class="search__input" placeholder="Search [ticker], reports…" aria-label="Search">
+    <!-- Center cluster: search + links -->
+    <div class="nav__center">
+      <div class="search tv">
+        <svg width="18" height="18" viewBox="0 0 24 24" class="search__icon" aria-hidden="true">
+          <path fill="currentColor" d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18m11.707 3.293L17.314 16.9a10 10 0 1 0-1.414 1.414l4.393 4.393a1 1 0 0 0 1.414-1.414"/>
+        </svg>
+        <input type="search" class="search__input" placeholder="Search [ticker], reports…" aria-label="Search">
+      </div>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features" class="nav__link">Products</a>
+        <a href="#summary"  class="nav__link">Overview</a>
+        <a href="reports.html" class="nav__link">Reports</a>
+        <a href="#about"     class="nav__link">About</a>
+      </nav>
     </div>
 
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#features" class="nav__link">Products</a>
-      <a href="/#summary"  class="nav__link">Overview</a>
-      <a href="/reports.html" class="nav__link">Reports</a>
-      <a href="/#about"    class="nav__link">About</a>
-    </nav>
-  </div>
+    <!-- Right: icons + gradient CTA + hamburger -->
+    <div class="nav__right">
+      <button class="iconbtn" aria-label="Language">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2m0 2c1.7 0 3.3.5 4.6 1.4H7.4A8 8 0 0 1 12 4m-8 8c0-.7.1-1.3.3-2h15.4c.2.7.3 1.3.3 2s-.1 1.3-.3 2H4.3c-.2-.7-.3-1.3-.3-2m3.1 6.6h9.2A8 8 0 0 1 6.1 18.6M17.9 7.4H6.1A8 8 0 0 1 17.9 7.4Z"/>
+        </svg>
+      </button>
 
-  <!-- Right: icons + CTA + hamburger -->
-  <div class="nav__right">
-    <!-- globe icon -->
-    <button class="iconbtn" aria-label="Language">
-      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2m0 2c1.7 0 3.3.5 4.6 1.4H7.4A8 8 0 0 1 12 4m-8 8c0-.7.1-1.3.3-2h15.4c.2.7.3 1.3.3 2s-.1 1.3-.3 2H4.3c-.2-.7-.3-1.3-.3-2m3.1 6.6h9.2A8 8 0 0 1 6.1 18.6M17.9 7.4H6.1A8 8 0 0 1 17.9 7.4Z"/>
-      </svg>
-    </button>
+      <button class="iconbtn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5m0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/>
+        </svg>
+      </button>
 
-    <!-- user icon -->
-    <button class="iconbtn" aria-label="Account">
-      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5m0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/>
-      </svg>
-    </button>
+      <a href="#contact" class="btn btn--cta">Get started</a>
 
-    <a href="/#contact" class="btn btn--cta">Get started</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+    <!-- Mobile sheet -->
+    <div class="nav__mobile glass" id="mobileMenu" hidden>
+      <a href="#features" class="nav__mobile-link">Products</a>
+      <a href="#summary"  class="nav__mobile-link">Overview</a>
+      <a href="reports.html" class="nav__mobile-link">Reports</a>
+      <a href="#about"    class="nav__mobile-link">About</a>
+      <a href="#contact"  class="btn btn--primary nav__mobile-cta">Get started</a>
+    </div>
+  </header>
+  <!-- spacer for fixed 64px header -->
+  <div style="height:64px"></div>
 
-  <!-- Mobile sheet -->
-  <div class="nav__mobile glass" id="mobileMenu" hidden>
-    <a href="/#features" class="nav__mobile-link">Products</a>
-    <a href="/#summary"  class="nav__mobile-link">Overview</a>
-    <a href="/reports.html" class="nav__mobile-link">Reports</a>
-    <a href="/#about"    class="nav__mobile-link">About</a>
-    <a href="/#contact"  class="btn btn--primary nav__mobile-cta">Get started</a>
-  </div>
-</header>
-<!-- spacer below fixed nav -->
-<div style="height:64px"></div>
+  <!-- =========================
+       HERO (parallax mountain image + fade)
+  ========================== -->
+  <section class="hero hero--image" id="home">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero__fx" aria-hidden="true"></div>
     <div class="container hero__content">
       <h1 class="hero__title">Look first<span class="slash">/</span>Then invest.</h1>
       <p class="hero__subtitle">
-        A research hub for equity and M&amp;A analysis. Clear assumptions, defendable models, and concise narratives—
-        built for industry professionals.
+        A research hub for equity and M&amp;A analysis. Clear assumptions, defendable models,
+        and concise narratives—built for industry professionals.
       </p>
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary btn--lg">Talk to us</a>
+        <a href="#contact" class="btn btn--primary btn--lg">Get started</a>
         <span class="hero__note">No paywall. Start with sample access.</span>
       </div>
       <a href="#summary" class="hero__scroll" aria-label="Scroll">▾</a>
     </div>
+
+    <!-- soft dark fade into page -->
+    <div class="hero__cut" aria-hidden="true"></div>
   </section>
 
-  <!-- OVERVIEW (placeholders only) -->
+  <!-- ===== OVERVIEW (placeholders) ===== -->
   <section class="section" id="summary">
     <div class="container">
       <div class="section__head">
         <h2 class="section__title">Overview</h2>
-        <span class="section__lead">Illustrative cards with placeholders — no live data.</span>
+        <span class="section__lead">Illustrative cards with placeholders—no live data.</span>
       </div>
 
       <div class="cards cards--row">
         <article class="card">
-          <div class="card__head">
-            <span class="badge badge--index">[Index Name]</span>
-            <span class="delta">[%change]</span>
-          </div>
-          <div class="spark" aria-hidden="true"></div>
+          <div class="card__head"><span class="badge badge--index">[Index Name]</span><span class="delta">[%change]</span></div>
+          <div class="spark"></div>
           <div class="card__foot"><span class="price">[level]</span><span class="unit">[unit]</span></div>
         </article>
-
         <article class="card">
-          <div class="card__head">
-            <span class="badge">[Asset Class]</span>
-            <span class="delta">[%change]</span>
-          </div>
-          <div class="spark spark--alt" aria-hidden="true"></div>
+          <div class="card__head"><span class="badge">[Asset Class]</span><span class="delta">[%change]</span></div>
+          <div class="spark spark--alt"></div>
           <div class="card__foot"><span class="price">[value]</span><span class="unit">[unit]</span></div>
         </article>
-
         <article class="card">
-          <div class="card__head">
-            <span class="badge">[Sector]</span>
-            <span class="delta">[%change]</span>
-          </div>
-          <div class="spark spark--alt2" aria-hidden="true"></div>
+          <div class="card__head"><span class="badge">[Sector]</span><span class="delta">[%change]</span></div>
+          <div class="spark spark--alt2"></div>
           <div class="card__foot"><span class="price">[value]</span><span class="unit">[unit]</span></div>
         </article>
-
         <article class="card">
-          <div class="card__head">
-            <span class="badge">[Yield]</span>
-            <span class="delta">[%change]</span>
-          </div>
-          <div class="spark spark--alt3" aria-hidden="true"></div>
+          <div class="card__head"><span class="badge">[Yield]</span><span class="delta">[%change]</span></div>
+          <div class="spark spark--alt3"></div>
           <div class="card__foot"><span class="price">[rate]</span><span class="unit">[%]</span></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- ===== FEATURES ===== -->
   <section class="section" id="features">
     <div class="container">
       <div class="section__head">
@@ -162,7 +152,7 @@
     </div>
   </section>
 
-  <!-- REPORTS (placeholders only) -->
+  <!-- ===== REPORTS TEASER ===== -->
   <section class="section" id="reports">
     <div class="container">
       <div class="section__head">
@@ -176,13 +166,11 @@
           <p>[One-line thesis with key catalyst].</p>
           <a href="#" class="btn btn--ghost">Open</a>
         </article>
-
         <article class="report glass">
           <h3>[Ticker] — [Short descriptor]</h3>
           <p>[Valuation / Margin bridge / Risks summary].</p>
           <a href="#" class="btn btn--ghost">Open</a>
         </article>
-
         <article class="report glass">
           <h3>[Sector Theme]</h3>
           <p>[Scenario work / Sensitivities / Roadmap].</p>
@@ -192,7 +180,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ===== ABOUT ===== -->
   <section class="section" id="about">
     <div class="container">
       <div class="section__head">
@@ -215,7 +203,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ===== CONTACT ===== -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section__head">
@@ -223,7 +211,6 @@
         <p class="section__lead">Request access, collaborate, or join the analyst team.</p>
       </div>
 
-      <!-- Ready for Formspree (replace action) -->
       <form class="form glass" method="POST" action="https://formspree.io/f/your-endpoint">
         <div class="form__row">
           <input required name="first_name" placeholder="First name" />
@@ -239,7 +226,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
@@ -249,7 +236,7 @@
       <div class="footer__links">
         <a href="#features">Products</a>
         <a href="#summary">Overview</a>
-        <a href="#reports">Reports</a>
+        <a href="reports.html">Reports</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -257,15 +244,16 @@
     </div>
   </footer>
 
-  <!-- Minimal JS for nav & mobile -->
+  <!-- ===== JS: nav scroll state + mobile menu + hero parallax/fade ===== -->
   <script>
+    // nav scroll state
     const nav = document.getElementById('nav');
-    const hamb = document.getElementById('hamburger');
-    const mobile = document.getElementById('mobileMenu');
-
     function onScroll(){ window.scrollY > 8 ? nav.classList.add('nav--scrolled') : nav.classList.remove('nav--scrolled'); }
     onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
+    // mobile menu
+    const hamb = document.getElementById('hamburger');
+    const mobile = document.getElementById('mobileMenu');
     hamb.addEventListener('click', () => {
       const open = mobile.hasAttribute('hidden');
       mobile.toggleAttribute('hidden');
@@ -274,6 +262,40 @@
     mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       mobile.setAttribute('hidden',''); hamb.setAttribute('aria-expanded','false');
     }));
+
+    // HERO parallax + fade (mountains)
+    (function(){
+      const hero = document.querySelector('.hero--image');
+      if (!hero) return;
+
+      // set image source via CSS variable fallback to ensure it loads
+      const bg = hero.querySelector('.hero__bg');
+      bg.style.backgroundImage = 'url("assets/hero-mountains.jpg")';
+
+      const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const maxOffset = 40;   // px move
+      const maxBlur   = 2.5;  // px blur
+      const maxFade   = 0.55; // opacity reduction
+
+      let h = hero.offsetHeight;
+      function onResize(){ h = hero.offsetHeight; }
+      window.addEventListener('resize', onResize);
+
+      function tick(){
+        const y = window.scrollY || window.pageYOffset;
+        const p = Math.max(0, Math.min(1, y / (h * 0.9)));
+        const offset = prefersReduce ? 0 : (p * maxOffset);
+        const blur   = prefersReduce ? 0 : (p * maxBlur);
+        const op     = 1 - (p * maxFade);
+
+        hero.style.setProperty('--y', offset + 'px');
+        hero.style.setProperty('--blur', blur + 'px');
+        hero.style.setProperty('--op', op.toString());
+
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
   </script>
 </body>
 </html>
