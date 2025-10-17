@@ -1,262 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telluride Research | Empowering Financial Analysis</title>
-  <link rel="icon" href="assets/logo.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telluride Research — Institutional-grade insights</title>
+  <meta name="description" content="Telluride Research provides institutional-grade equity and M&A research, models, and insights." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Telluride Research delivers professional-grade equity and M&A insights for investors and finance professionals." />
-  <style>
-    /* === FONT + BASE === */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0e0e0e;
-      color: #d9d9d9;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #66b2ff;
-      text-decoration: none;
-    }
-
-    h1, h2, h3 {
-      color: #9ccfff;
-      font-weight: 700;
-    }
-
-    /* === HEADER === */
-    header {
-      background: #000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 3rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo img {
-      height: 48px;
-    }
-
-    nav a {
-      margin-left: 24px;
-      font-weight: 600;
-      transition: color 0.2s ease-in-out;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    /* === HERO === */
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-      background: linear-gradient(to bottom, #0a0a0a 0%, #111 100%);
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      color: #66b2ff;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #bbb;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.75rem;
-      border: 1px solid #66b2ff;
-      color: #66b2ff;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background: #66b2ff;
-      color: #000;
-    }
-
-    /* === ABOUT === */
-    .section {
-      padding: 100px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-    }
-
-    .columns p {
-      flex: 1;
-      min-width: 300px;
-      color: #c5c5c5;
-    }
-
-    /* === REPORTS === */
-    .reports-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .report-card {
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #2a2a2a;
-      transition: transform 0.2s ease;
-    }
-
-    .report-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* === CONTACT === */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    input, textarea {
-      padding: 0.75rem;
-      background: #121212;
-      border: 1px solid #333;
-      color: white;
-      border-radius: 4px;
-    }
-
-    button {
-      padding: 0.75rem;
-      background: #66b2ff;
-      border: none;
-      color: #000;
-      font-weight: 600;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-      }
-
-      nav a {
-        margin: 0 10px;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- === NAVIGATION === -->
-  <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="Telluride Research Logo" />
+
+  <!-- NAV (fixed translucent) -->
+  <header class="nav glass" id="nav">
+    <div class="nav__left">
+      <a class="brand" href="/">
+        <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
+        <span class="brand__name">Telluride Research</span>
+      </a>
     </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#reports">Reports</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+
+    <div class="nav__center">
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" class="search__icon" aria-hidden="true"><path fill="currentColor" d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18m11.707 3.293L17.314 16.9a10 10 0 1 0-1.414 1.414l4.393 4.393a1 1 0 0 0 1.414-1.414"/></svg>
+        <input type="search" class="search__input" placeholder="Search [ticker], reports…" aria-label="Search">
+      </div>
+    </div>
+
+    <nav class="nav__right" aria-label="Primary">
+      <a href="#features" class="nav__link">Products</a>
+      <a href="#summary" class="nav__link">Overview</a>
+      <a href="#reports" class="nav__link">Reports</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#contact" class="btn btn--primary">Get started</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile glass" id="mobileMenu" hidden>
+      <a href="#features" class="nav__mobile-link">Products</a>
+      <a href="#summary" class="nav__mobile-link">Overview</a>
+      <a href="#reports" class="nav__mobile-link">Reports</a>
+      <a href="#about" class="nav__mobile-link">About</a>
+      <a href="#contact" class="btn btn--primary nav__mobile-cta">Get started</a>
+    </div>
   </header>
+  <div style="height:76px"></div><!-- spacer for fixed nav -->
 
-  <!-- === HERO SECTION === -->
-  <section class="hero">
-    <h1>Empowering Financial Research</h1>
-    <p>Unlocking the potential of financial analysis with professional-grade reports, insights, and valuation coverage for modern investors.</p>
-    <a href="#contact" class="btn">Get in Touch</a>
-  </section>
-
-  <!-- === ABOUT === -->
-  <section class="section" id="about">
-    <h2>About Telluride Research</h2>
-    <div class="columns" style="margin-top: 2rem;">
-      <p><strong>Our Mission</strong><br> Telluride Research is dedicated to producing in-depth equity and M&A reports, offering actionable insights and expert-driven analysis to guide intelligent investment decisions.</p>
-
-      <p><strong>Our Approach</strong><br> We use advanced valuation models, DCFs, and sector research to produce institutional-quality insights. Our mission is to connect aspiring finance professionals with meaningful, data-driven research experiences.</p>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__fx" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <h1 class="hero__title">Look first<span class="slash">/</span>Then invest.</h1>
+      <p class="hero__subtitle">
+        A research hub for equity and M&amp;A analysis. Clear assumptions, defendable models, and concise narratives—
+        built for industry professionals.
+      </p>
+      <div class="hero__cta">
+        <a href="#contact" class="btn btn--primary btn--lg">Talk to us</a>
+        <span class="hero__note">No paywall. Start with sample access.</span>
+      </div>
+      <a href="#summary" class="hero__scroll" aria-label="Scroll">▾</a>
     </div>
   </section>
 
-  <!-- === REPORTS === -->
+  <!-- OVERVIEW (placeholders only) -->
+  <section class="section" id="summary">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Overview</h2>
+        <span class="section__lead">Illustrative cards with placeholders — no live data.</span>
+      </div>
+
+      <div class="cards cards--row">
+        <article class="card">
+          <div class="card__head">
+            <span class="badge badge--index">[Index Name]</span>
+            <span class="delta">[%change]</span>
+          </div>
+          <div class="spark" aria-hidden="true"></div>
+          <div class="card__foot"><span class="price">[level]</span><span class="unit">[unit]</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="badge">[Asset Class]</span>
+            <span class="delta">[%change]</span>
+          </div>
+          <div class="spark spark--alt" aria-hidden="true"></div>
+          <div class="card__foot"><span class="price">[value]</span><span class="unit">[unit]</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="badge">[Sector]</span>
+            <span class="delta">[%change]</span>
+          </div>
+          <div class="spark spark--alt2" aria-hidden="true"></div>
+          <div class="card__foot"><span class="price">[value]</span><span class="unit">[unit]</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="badge">[Yield]</span>
+            <span class="delta">[%change]</span>
+          </div>
+          <div class="spark spark--alt3" aria-hidden="true"></div>
+          <div class="card__foot"><span class="price">[rate]</span><span class="unit">[%]</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Where professionals do research</h2>
+        <p class="section__lead">Tight writing, rigorous models, and presentation-ready outputs.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="tile glass">
+          <h3>Valuation models</h3>
+          <p>DCF, trading comps, and unit economics with assumptions inline and scenario toggles.</p>
+        </div>
+        <div class="tile glass">
+          <h3>Sector notes</h3>
+          <p>Concise theses, catalysts, and risks across Technology, Energy, Industrials, and Healthcare.</p>
+        </div>
+        <div class="tile glass">
+          <h3>M&amp;A tracker</h3>
+          <p>Deal models, synergy waterfalls, and approval timelines—ready for IC and clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS (placeholders only) -->
   <section class="section" id="reports">
-    <h2>Recent Reports</h2>
-    <div class="reports-grid" style="margin-top: 2rem;">
-      <div class="report-card">
-        <h3>Constellation Energy Acquires Calpine</h3>
-        <p>Comprehensive analysis of Constellation Energy’s $26.6B acquisition of Calpine Corporation—creating the largest independent clean energy producer in North America.</p>
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Latest reports</h2>
+        <a class="link" href="reports.html">Browse library →</a>
       </div>
 
-      <div class="report-card">
-        <h3>Okta, Inc: Identity Leader Poised for Growth</h3>
-        <p>Buy rating with a $128 target. In-depth coverage of Okta’s strategic positioning within the cybersecurity identity market.</p>
-      </div>
+      <div class="grid grid--3">
+        <article class="report glass">
+          <h3>[Company / Deal Title]</h3>
+          <p>[One-line thesis with key catalyst].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
 
-      <div class="report-card">
-        <h3>Cameco Corporation: Nuclear Renaissance</h3>
-        <p>Insight into Cameco’s expanding global uranium production capacity amid renewed global investment in nuclear energy.</p>
+        <article class="report glass">
+          <h3>[Ticker] — [Short descriptor]</h3>
+          <p>[Valuation / Margin bridge / Risks summary].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <article class="report glass">
+          <h3>[Sector Theme]</h3>
+          <p>[Scenario work / Sensitivities / Roadmap].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- === CONTACT === -->
-  <section class="section" id="contact">
-    <h2>Connect With Us</h2>
-    <p>Reach out if you’re interested in joining our analyst team, collaborating on research, or accessing our latest market insights.</p>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="first-name" placeholder="First Name" required />
-      <input type="text" name="last-name" placeholder="Last Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" rows="5"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">About Telluride Research</h2>
+      </div>
+      <div class="about glass">
+        <div>
+          <h3>Mission</h3>
+          <p>Deliver institutional-grade research that’s transparent, reproducible, and useful.</p>
+        </div>
+        <div>
+          <h3>Approach</h3>
+          <p>Evidence first—clean data, explicit assumptions, valuation rigor, documented risks.</p>
+        </div>
+        <div>
+          <h3>Audience</h3>
+          <p>Industry professionals, students on professional tracks, and serious independent investors.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- === FOOTER === -->
-  <footer>
-    <p>&copy; 2025 Telluride Research — All Rights Reserved.</p>
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Connect with us</h2>
+        <p class="section__lead">Request access, collaborate, or join the analyst team.</p>
+      </div>
+
+      <!-- Ready for Formspree (replace action) -->
+      <form class="form glass" method="POST" action="https://formspree.io/f/your-endpoint">
+        <div class="form__row">
+          <input required name="first_name" placeholder="First name" />
+          <input required name="last_name" placeholder="Last name" />
+        </div>
+        <div class="form__row">
+          <input required type="email" name="email" placeholder="Email" />
+          <input name="org" placeholder="Organization (optional)" />
+        </div>
+        <textarea name="message" rows="5" placeholder="Tell us what you’re looking for (e.g., [ticker] coverage, [sector] deep-dive)."></textarea>
+        <button class="btn btn--primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
+        <span>© 2025 Telluride Research</span>
+      </div>
+      <div class="footer__links">
+        <a href="#features">Products</a>
+        <a href="#summary">Overview</a>
+        <a href="#reports">Reports</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer__note">Placeholders shown are illustrative only and not investment advice.</div>
+    </div>
   </footer>
+
+  <!-- Minimal JS for nav & mobile -->
+  <script>
+    const nav = document.getElementById('nav');
+    const hamb = document.getElementById('hamburger');
+    const mobile = document.getElementById('mobileMenu');
+
+    function onScroll(){ window.scrollY > 8 ? nav.classList.add('nav--scrolled') : nav.classList.remove('nav--scrolled'); }
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+    hamb.addEventListener('click', () => {
+      const open = mobile.hasAttribute('hidden');
+      mobile.toggleAttribute('hidden');
+      hamb.setAttribute('aria-expanded', String(open));
+    });
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobile.setAttribute('hidden',''); hamb.setAttribute('aria-expanded','false');
+    }));
+  </script>
 </body>
 </html>
