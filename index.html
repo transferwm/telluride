@@ -67,14 +67,15 @@
       <a href="#contact"  class="btn btn--primary nav__mobile-cta">Get started</a>
     </div>
   </header>
-  <!-- spacer for fixed 64px header -->
-  <div style="height:64px"></div>
+  <!-- spacer for fixed 56px header -->
+  <div style="height:56px"></div>
 
   <!-- =========================
        HERO (parallax mountain image + fade)
   ========================== -->
   <section class="hero hero--image" id="home">
-    <div class="hero__bg" aria-hidden="true"></div>
+    <!-- Set the image inline so it works even before JS executes -->
+    <div class="hero__bg" style="background-image:url('assets/teluride.jpg')" aria-hidden="true"></div>
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="container hero__content">
@@ -267,10 +268,6 @@
     (function(){
       const hero = document.querySelector('.hero--image');
       if (!hero) return;
-
-      // set image source via CSS variable fallback to ensure it loads
-      const bg = hero.querySelector('.hero__bg');
-      bg.style.backgroundImage = 'url("assets/hero-mountains.jpg")';
 
       const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const maxOffset = 40;   // px move
