@@ -37,45 +37,31 @@
       </nav>
     </div>
 
-    <!-- Right: icons + gradient CTA + hamburger -->
+    <!-- Right: icons + gradient CTA (no hamburger / no mobile sheet) -->
     <div class="nav__right">
-      <button class="iconbtn" aria-label="Language">
+      <button class="iconbtn" aria-label="Language" title="Language">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2m0 2c1.7 0 3.3.5 4.6 1.4H7.4A8 8 0 0 1 12 4m-8 8c0-.7.1-1.3.3-2h15.4c.2.7.3 1.3.3 2s-.1 1.3-.3 2H4.3c-.2-.7-.3-1.3-.3-2m3.1 6.6h9.2A8 8 0 0 1 6.1 18.6M17.9 7.4H6.1A8 8 0 0 1 17.9 7.4Z"/>
         </svg>
       </button>
 
-      <button class="iconbtn" aria-label="Account">
+      <button class="iconbtn" aria-label="Account" title="Account">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5m0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/>
         </svg>
       </button>
 
       <a href="#contact" class="btn btn--cta">Get started</a>
-
-      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <!-- Mobile sheet -->
-    <div class="nav__mobile glass" id="mobileMenu" hidden>
-      <a href="#features" class="nav__mobile-link">Products</a>
-      <a href="#summary"  class="nav__mobile-link">Overview</a>
-      <a href="reports.html" class="nav__mobile-link">Reports</a>
-      <a href="#about"    class="nav__mobile-link">About</a>
-      <a href="#contact"  class="btn btn--primary nav__mobile-cta">Get started</a>
     </div>
   </header>
-  <!-- spacer for fixed 56px header -->
-  <div style="height:56px"></div>
+  <!-- spacer for fixed 64px header -->
+  <div style="height:64px"></div>
 
   <!-- =========================
        HERO (parallax mountain image + fade)
   ========================== -->
   <section class="hero hero--image" id="home">
-    <!-- Set the image inline so it works even before JS executes -->
-    <div class="hero__bg" style="background-image:url('assets/teluride.jpg')" aria-hidden="true"></div>
+    <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="container hero__content">
@@ -245,29 +231,21 @@
     </div>
   </footer>
 
-  <!-- ===== JS: nav scroll state + mobile menu + hero parallax/fade ===== -->
+  <!-- ===== JS: nav scroll state + hero parallax/fade ===== -->
   <script>
     // nav scroll state
     const nav = document.getElementById('nav');
     function onScroll(){ window.scrollY > 8 ? nav.classList.add('nav--scrolled') : nav.classList.remove('nav--scrolled'); }
     onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-    // mobile menu
-    const hamb = document.getElementById('hamburger');
-    const mobile = document.getElementById('mobileMenu');
-    hamb.addEventListener('click', () => {
-      const open = mobile.hasAttribute('hidden');
-      mobile.toggleAttribute('hidden');
-      hamb.setAttribute('aria-expanded', String(open));
-    });
-    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mobile.setAttribute('hidden',''); hamb.setAttribute('aria-expanded','false');
-    }));
-
     // HERO parallax + fade (mountains)
     (function(){
       const hero = document.querySelector('.hero--image');
       if (!hero) return;
+
+      // Use your uploaded image
+      const bg = hero.querySelector('.hero__bg');
+      bg.style.backgroundImage = 'url("assets/teluride.jpg")';
 
       const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const maxOffset = 40;   // px move
