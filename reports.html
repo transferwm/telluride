@@ -3,47 +3,201 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reports | Telluride Research</title>
-  <link rel="icon" href="assets/favicon.png" />
+  <title>Reports Library — Telluride Research</title>
+  <meta name="description" content="Browse Telluride Research reports. Placeholders only for layout preview." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo"><a href="/"><img src="assets/logo.png" alt="Telluride Research" /></a></div>
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/tracker.html">Stock Tracker</a>
-      <a class="active" href="/reports.html">Reports</a>
-      <a href="/about.html">About</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main class="section">
-    <h1>Research Library</h1>
-    <div class="reports-grid" style="margin-top:2rem">
-      <article class="report-card">
-        <h3><a href="reports/constellation-calpine.html">Constellation Energy acquires Calpine</a></h3>
-        <p>Deal model, synergy sensitivities, and regulatory timeline.</p>
-        <small>Energy · M&A · Feb 2025</small>
-      </article>
-
-      <article class="report-card">
-        <h3><a href="reports/okta-coverage.html">Okta, Inc. — Identity leader</a></h3>
-        <p>LT margin bridge, retention cohorts, and $128 PT.</p>
-        <small>Software · Equity · Jan 2025</small>
-      </article>
-
-      <article class="report-card">
-        <h3><a href="reports/cameco-nuclear.html">Cameco — Nuclear renaissance</a></h3>
-        <p>Uranium pricing scenarios & capacity roadmap.</p>
-        <small>Industrials · Equity · Jan 2025</small>
-      </article>
+  <!-- Fixed translucent navbar (same as index) -->
+  <header class="nav glass" id="nav">
+    <div class="nav__left">
+      <a class="brand" href="/">
+        <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
+        <span class="brand__name">Telluride Research</span>
+      </a>
     </div>
-  </main>
 
-  <footer class="site-footer">
-    <p>© 2025 Telluride Research</p>
+    <div class="nav__center">
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" class="search__icon" aria-hidden="true">
+          <path fill="currentColor" d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18m11.707 3.293L17.314 16.9a10 10 0 1 0-1.414 1.414l4.393 4.393a1 1 0 0 0 1.414-1.414"/>
+        </svg>
+        <input type="search" class="search__input" placeholder="Search [ticker] or [company]…" aria-label="Search reports">
+      </div>
+    </div>
+
+    <nav class="nav__right" aria-label="Primary">
+      <a href="/" class="nav__link">Home</a>
+      <a href="/#features" class="nav__link">Products</a>
+      <a href="/#summary" class="nav__link">Overview</a>
+      <a href="/#about" class="nav__link">About</a>
+      <a href="/#contact" class="btn btn--primary">Get started</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav__mobile glass" id="mobileMenu" hidden>
+      <a href="/" class="nav__mobile-link">Home</a>
+      <a href="/#features" class="nav__mobile-link">Products</a>
+      <a href="/#summary" class="nav__mobile-link">Overview</a>
+      <a href="/#about" class="nav__mobile-link">About</a>
+      <a href="/#contact" class="btn btn--primary nav__mobile-cta">Get started</a>
+    </div>
+  </header>
+  <div style="height:76px"></div><!-- spacer below fixed nav -->
+
+  <!-- Page header -->
+  <section class="section" style="padding-top:48px;">
+    <div class="container">
+      <h1 class="section__title">Research Library</h1>
+      <p class="section__lead">Generic placeholders only — use this page to preview layout and formatting.</p>
+    </div>
+  </section>
+
+  <!-- Filters / chips (placeholders) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="glass" style="padding:14px; border:1px solid rgba(255,255,255,.08);">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+          <span class="badge badge--index">All</span>
+          <span class="badge">[Technology]</span>
+          <span class="badge">[Energy]</span>
+          <span class="badge">[Industrials]</span>
+          <span class="badge">[Healthcare]</span>
+          <span class="badge">[M&amp;A]</span>
+          <span class="badge">[Initiation]</span>
+          <span class="badge">[Update]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report grid (placeholders) -->
+  <section class="section" style="padding-top:28px;">
+    <div class="container">
+      <div class="grid grid--3">
+        <!-- Card 1 -->
+        <article class="report glass">
+          <h3>[Company Name] — [Ticker]</h3>
+          <p>[Initiation / Update] · [Buy / Hold / Sell] · PT: [target]</p>
+          <p>Thesis: [one-sentence summary of thesis and catalysts].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="report glass">
+          <h3>[Acquirer] / [Target] — [Deal Type]</h3>
+          <p>Value: [deal value] · Synergies: [range] · Close: [expected date]</p>
+          <p>Notes: [regulatory steps] · [financing] · [key risks].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="report glass">
+          <h3>[Sector Theme] Deep-dive</h3>
+          <p>Scope: [timeframe] · Coverage: [tickers list]</p>
+          <p>Focus: [drivers] · [valuation context] · [scenario work].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="report glass">
+          <h3>[Company Name] — [Ticker]</h3>
+          <p>[Update] · Model rev: [date] · PT: [target]</p>
+          <p>Key changes: [assumption A], [assumption B], [assumption C].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="report glass">
+          <h3>[Cross-sector] Comp sheet</h3>
+          <p>Universe: [N] names · Metrics: [set]</p>
+          <p>Use: [screening purpose / relative value / factor view].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="report glass">
+          <h3>[Company Name] — [Ticker]</h3>
+          <p>[Preview / Post-earnings] · FY[YY] guide: [outline]</p>
+          <p>Watch: [catalyst A], [catalyst B], [timeline].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="report glass">
+          <h3>[Acquirer] / [Target] — [Merger Model]</h3>
+          <p>Accretion/Dilution: [range] · Cost of debt: [x%] · Cash/Stock mix: [mix]</p>
+          <p>Sensitivity: [variable set] with [low/mid/high] cases.</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="report glass">
+          <h3>[Thematic] — [Macro linkage]</h3>
+          <p>Impact on: [sub-sectors] · Beta to: [macro series]</p>
+          <p>Positioning: [OW/UW/N] across coverage.</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="report glass">
+          <h3>[Company Name] — [Ticker]</h3>
+          <p>[Initiation] · Rating: [rating] · PT: [target]</p>
+          <p>Framework: [TAM], [unit economics], [margin bridge], [risks].</p>
+          <a href="#" class="btn btn--ghost">Open</a>
+        </article>
+      </div>
+
+      <!-- Pagination (placeholders) -->
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:28px;">
+        <a href="#" class="btn btn--ghost">‹ Prev</a>
+        <span class="badge">Page [1]</span>
+        <a href="#" class="btn btn--ghost">Next ›</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Telluride Research" class="brand__logo">
+        <span>© 2025 Telluride Research</span>
+      </div>
+      <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/#features">Products</a>
+        <a href="/#summary">Overview</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer__note">This page uses placeholders for formatting preview and contains no market data.</div>
+    </div>
   </footer>
+
+  <!-- Minimal JS (nav scroll state + mobile menu) -->
+  <script>
+    const nav = document.getElementById('nav');
+    const hamb = document.getElementById('hamburger');
+    const mobile = document.getElementById('mobileMenu');
+
+    function onScroll(){ window.scrollY > 8 ? nav.classList.add('nav--scrolled') : nav.classList.remove('nav--scrolled'); }
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+    hamb.addEventListener('click', () => {
+      const open = mobile.hasAttribute('hidden');
+      mobile.toggleAttribute('hidden');
+      hamb.setAttribute('aria-expanded', String(open));
+    });
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobile.setAttribute('hidden',''); hamb.setAttribute('aria-expanded','false');
+    }));
+  </script>
 </body>
 </html>
