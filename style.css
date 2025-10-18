@@ -246,31 +246,6 @@ textarea{resize:vertical; min-height:90px}
 .footer__note{color:#8b97ac;font-size:.9rem}
 
 /* =========================
-   Responsive
-========================= */
-@media (max-width:1100px){
-  .cards--row{grid-template-columns:repeat(2,1fr)}
-  .grid--3{grid-template-columns:repeat(2,1fr)}
-  .about{grid-template-columns:1fr}
-}
-@media (max-width:1020px){
-  .nav__links{display:none}
-  .search.tv{min-width:0}
-}
-@media (max-width:860px){
-  .search.tv{display:none}
-  .btn--cta{display:none}
-  .iconbtn{display:none}
-  .cards--row{grid-template-columns:1fr}
-  .grid--3{grid-template-columns:1fr}
-  .form__row{grid-template-columns:1fr; gap:8px}
-  .form{gap:8px}
-  #contact.section{padding-top:30px; padding-bottom:50px}
-  .footer__grid{grid-template-columns:1fr; text-align:center}
-  .brand__name{display:none;} /* only show logo on mobile */
-}
-
-/* =========================
    Newsletter Modal (Telluride blue)
 ========================= */
 .modal {
@@ -326,9 +301,17 @@ textarea{resize:vertical; min-height:90px}
   margin: 0 0 12px 0; color: var(--muted);
 }
 
-/* ====== Newsletter modal: make <select> look like the inputs ====== */
+/* ====== Newsletter modal form ====== */
+.form--modal .row-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;  /* restore 2×2 format */
+  gap:12px;                       /* space between paired fields */
+  margin-bottom:12px;
+}
+
 .form--modal input,
 .form--modal .modal__select{
+  width:100%;
   height:44px;
   padding:12px 14px;
   border-radius:10px;
@@ -337,6 +320,7 @@ textarea{resize:vertical; min-height:90px}
   color:var(--text);
   font:inherit;
   outline:0;
+  box-sizing:border-box;
 }
 
 /* Specific tweaks for the Title <select> so it visually matches */
@@ -356,24 +340,24 @@ textarea{resize:vertical; min-height:90px}
   box-shadow:0 0 0 3px rgba(124,157,255,.18);
 }
 
+/* checkbox line: text is clickable */
 .modal__checkbox{
   display:flex;
   align-items:center;
   gap:10px;
   margin-top:10px;
-  color:#cbd6f1;              /* clearer than muted gray */
+  color:#cbd6f1;
   font-size:.95rem;
-  line-height:1;
-  cursor:pointer;             /* pointer over the whole row */
+  line-height:1.2;
+  cursor:pointer;             /* whole row clickable */
   user-select:none;
 }
-
 .modal__checkbox input[type="checkbox"]{
   width:18px;
   height:18px;
-  accent-color:var(--brand);  /* Telluride blue check */
+  accent-color:var(--brand);
+  margin:0;
   cursor:pointer;
-  margin:0;                   /* align perfectly with text */
 }
 
 .modal__actions {
@@ -386,6 +370,30 @@ textarea{resize:vertical; min-height:90px}
 }
 .btn--inverse:hover { filter: brightness(1.1); }
 
+/* =========================
+   Responsive
+========================= */
+@media (max-width:1100px){
+  .cards--row{grid-template-columns:repeat(2,1fr)}
+  .grid--3{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr}
+}
+@media (max-width:1020px){
+  .nav__links{display:none}
+  .search.tv{min-width:0}
+}
+@media (max-width:860px){
+  .search.tv{display:none}
+  .btn--cta{display:none}
+  .iconbtn{display:none}
+  .cards--row{grid-template-columns:1fr}
+  .grid--3{grid-template-columns:1fr}
+  .form__row{grid-template-columns:1fr; gap:8px}
+  .form{gap:8px}
+  #contact.section{padding-top:30px; padding-bottom:50px}
+  .footer__grid{grid-template-columns:1fr; text-align:center}
+  .brand__name{display:none;} /* only show logo on mobile */
+}
 @media (max-width: 560px){
-  .form--modal .row-2 { grid-template-columns: 1fr; }
+  .form--modal .row-2 { grid-template-columns: 1fr; } /* stack fields on small screens */
 }
