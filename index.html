@@ -17,7 +17,7 @@
     <!-- Brand -->
     <a class="brand" href="index.html" aria-label="Telluride Research home">
       <img src="assets/logo.png" alt="" class="brand__logo" />
-      <span class="brand__name">Telluride Research</span>
+      <span class="brand__name" data-i18n="brand">Telluride Research</span>
     </a>
 
     <!-- Center: search + links -->
@@ -30,10 +30,10 @@
       </div>
 
       <nav class="nav__links" aria-label="Primary">
-        <a href="#features" class="nav__link">Products</a>
-        <a href="#summary"  class="nav__link">Overview</a>
-        <a href="reports.html" class="nav__link">Reports</a>
-        <a href="#about"     class="nav__link">About</a>
+        <a href="#features" class="nav__link" data-i18n="nav.products">Products</a>
+        <a href="#summary"  class="nav__link" data-i18n="nav.overview">Overview</a>
+        <a href="reports.html" class="nav__link" data-i18n="nav.reports">Reports</a>
+        <a href="#about"     class="nav__link" data-i18n="nav.about">About</a>
       </nav>
     </div>
    
@@ -63,11 +63,11 @@
       <!-- Account menu -->
       <div class="menu" id="acctMenu" role="menu" hidden>
         <button class="menu__item" id="openNewsletter" role="menuitem">Subscribe (newsletter)</button>
-        <a class="menu__item" role="menuitem" href="#contact">Contact</a>
+        <a class="menu__item" role="menuitem" href="#contact" data-i18n="nav.contact">Contact</a>
         <button class="menu__item" role="menuitem" disabled title="Coming soon">Sign in</button>
       </div>
 
-      <a href="#contact" class="btn btn--cta">Get started</a>
+      <a href="#contact" class="btn btn--cta" data-i18n="cta.getStarted">Get started</a>
     </div>
   </header>
 
@@ -80,11 +80,16 @@
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="container hero__content">
-      <h1 class="hero__title">[INSERT]<span class="slash">/</span>[TEXT HERE]</h1>
-      <p class="hero__subtitle">[INSERT TEXT HERE]</p>
+      <h1 class="hero__title">
+        <span data-i18n="hero.look">Look first</span><span class="slash">/</span><span data-i18n="hero.then">Then invest.</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">
+        A research hub for equity and M&amp;A analysis. Clear assumptions, defendable models,
+        and concise narratives—built for industry professionals.
+      </p>
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary btn--lg">Get started</a>
-        <span class="hero__note">[INSERT TEXT HERE]</span>
+        <a href="#contact" class="btn btn--primary btn--lg" data-i18n="cta.getStarted">Get started</a>
+        <span class="hero__note" data-i18n="hero.note">No paywall. Start with sample access.</span>
       </div>
       <a href="#summary" class="hero__scroll" aria-label="Scroll">▾</a>
     </div>
@@ -95,8 +100,8 @@
   <section class="section" id="summary">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Overview</h2>
-        <span class="section__lead">[INSERT TEXT HERE]</span>
+        <h2 class="section__title" data-i18n="overview.title">Overview</h2>
+        <span class="section__lead" data-i18n="overview.lead">Illustrative cards with placeholders—no live data.</span>
       </div>
 
       <div class="cards cards--row">
@@ -128,8 +133,8 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">[TITLE]</h2>
-        <p class="section__lead">[INSERT TEXT HERE]</p>
+        <h2 class="section__title" data-i18n="features.title">Where professionals do research</h2>
+        <p class="section__lead" data-i18n="features.lead">Tight writing, rigorous models, and presentation-ready outputs.</p>
       </div>
 
       <div class="grid grid--3">
@@ -153,8 +158,8 @@
   <section class="section" id="reports">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Latest reports</h2>
-        <a class="link" href="reports.html">Browse library →</a>
+        <h2 class="section__title" data-i18n="reports.title">Latest reports</h2>
+        <a class="link" href="reports.html" data-i18n="reports.browse">Browse library →</a>
       </div>
 
       <div class="grid grid--3">
@@ -181,7 +186,7 @@
   <section class="section" id="about">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">About Telluride Research</h2>
+        <h2 class="section__title" data-i18n="about.title">About Telluride Research</h2>
       </div>
       <div class="about glass">
         <div>
@@ -204,29 +209,29 @@
   <section class="section" id="contact">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Connect with us</h2>
-        <p class="section__lead">Request access, collaborate, or join the analyst team.</p>
+        <h2 class="section__title" data-i18n="contact.title">Connect with us</h2>
+        <p class="section__lead" data-i18n="contact.lead">Request access, collaborate, or join the analyst team.</p>
       </div>
 
       <form class="form glass"
             method="POST"
             action="https://formspree.io/f/xyznoqzr">
         <div class="form__row">
-          <input required name="first_name" placeholder="First name" autocomplete="given-name" />
-          <input required name="last_name"  placeholder="Last name"  autocomplete="family-name" />
+          <input required name="first_name" placeholder="First name" autocomplete="given-name" data-i18n-ph="form.first" />
+          <input required name="last_name"  placeholder="Last name"  autocomplete="family-name" data-i18n-ph="form.last" />
         </div>
         <div class="form__row">
-          <input required type="email" name="email" placeholder="Email" autocomplete="email" />
-          <input name="org" placeholder="Organization (optional)" autocomplete="organization" />
+          <input required type="email" name="email" placeholder="Email" autocomplete="email" data-i18n-ph="form.email" />
+          <input name="org" placeholder="Organization (optional)" autocomplete="organization" data-i18n-ph="form.org" />
         </div>
-        <textarea name="message" rows="5" placeholder="Tell us what you’re looking for (e.g., [ticker] coverage, [sector] deep-dive)."></textarea>
+        <textarea name="message" rows="5" placeholder="Tell us what you’re looking for (e.g., [ticker] coverage, [sector] deep-dive)." data-i18n-ph="form.msg"></textarea>
 
         <!-- Formspree helpers -->
         <input type="hidden" name="_subject"  value="Telluride site contact">
         <input type="hidden" name="_redirect" value="https://transferwm.github.io/telluride/thank-you.html">
         <input type="text"   name="_gotcha"   style="display:none">
 
-        <button class="btn btn--primary" type="submit">Submit</button>
+        <button class="btn btn--primary" type="submit" data-i18n="form.submit">Submit</button>
       </form>
     </div>
   </section>
@@ -239,13 +244,13 @@
         <span>© 2025 Telluride Research</span>
       </div>
       <div class="footer__links">
-        <a href="#features">Products</a>
-        <a href="#summary">Overview</a>
-        <a href="reports.html">Reports</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#features" data-i18n="nav.products">Products</a>
+        <a href="#summary"  data-i18n="nav.overview">Overview</a>
+        <a href="reports.html" data-i18n="nav.reports">Reports</a>
+        <a href="#about"    data-i18n="nav.about">About</a>
+        <a href="#contact"  data-i18n="nav.contact">Contact</a>
       </div>
-      <div class="footer__note">Placeholder</div>
+      <div class="footer__note" data-i18n="footer.note">Placeholder</div>
     </div>
   </footer>
 
@@ -404,13 +409,14 @@
       document.addEventListener('click', closeAll);
       window.addEventListener('keydown', e => { if(e.key==='Escape') closeAll(); });
 
-      // Language selection -> remember + update tooltip
+      // Language selection -> remember + update tooltip (i18n applied by script below)
       langMenu.querySelectorAll('[data-lang]').forEach(item => {
         item.addEventListener('click', () => {
           const code = item.getAttribute('data-lang') || 'en';
           try { localStorage.setItem('tr_lang', code); } catch(e){}
           langBtn.title = `Language: ${code.toUpperCase()}`;
           closeAll();
+          if (window.__applyLang) window.__applyLang(code);
         });
       });
       try {
@@ -424,6 +430,163 @@
         if (window.__openNewsletter) window.__openNewsletter();
       });
     })();
+  </script>
+
+  <!-- ===== Tiny i18n (strings + renderer) ===== -->
+  <script>
+  (function(){
+    const STORAGE_KEY = 'tr_lang';
+
+    const dict = {
+      en: {
+        _title: "Telluride Research — Institutional-grade insights",
+        brand: "Telluride Research",
+        nav: { products:"Products", overview:"Overview", reports:"Reports", about:"About", contact:"Contact" },
+        hero: {
+          look:"Look first", then:"Then invest.",
+          subtitle:"A research hub for equity and M&A analysis. Clear assumptions, defendable models, and concise narratives—built for industry professionals.",
+          note:"No paywall. Start with sample access."
+        },
+        cta:{ getStarted:"Get started" },
+        overview:{ title:"Overview", lead:"Illustrative cards with placeholders—no live data." },
+        features:{ title:"Where professionals do research", lead:"Tight writing, rigorous models, and presentation-ready outputs." },
+        reports:{ title:"Latest reports", browse:"Browse library →" },
+        about:{ title:"About Telluride Research" },
+        contact:{ title:"Connect with us", lead:"Request access, collaborate, or join the analyst team." },
+        form:{
+          first:"First name", last:"Last name", email:"Email",
+          org:"Organization (optional)",
+          msg:"Tell us what you’re looking for (e.g., [ticker] coverage, [sector] deep-dive).",
+          submit:"Submit"
+        },
+        footer:{ note:"Placeholder" }
+      },
+      es: {
+        _title:"Telluride Research — Información de nivel institucional",
+        brand:"Telluride Research",
+        nav:{ products:"Productos", overview:"Resumen", reports:"Informes", about:"Acerca de", contact:"Contacto" },
+        hero:{
+          look:"Primero mira", then:"Luego invierte.",
+          subtitle:"Un centro de investigación para análisis de Renta Variable y M&A. Supuestos claros, modelos defendibles y narrativas concisas para profesionales.",
+          note:"Sin paywall. Empieza con acceso de muestra."
+        },
+        cta:{ getStarted:"Comenzar" },
+        overview:{ title:"Resumen", lead:"Tarjetas ilustrativas con marcadores — sin datos en vivo." },
+        features:{ title:"Dónde investigan los profesionales", lead:"Redacción precisa, modelos rigurosos y materiales listos para presentar." },
+        reports:{ title:"Últimos informes", browse:"Ver biblioteca →" },
+        about:{ title:"Acerca de Telluride Research" },
+        contact:{ title:"Conéctate con nosotros", lead:"Solicita acceso, colabora o únete al equipo de analistas." },
+        form:{
+          first:"Nombre", last:"Apellido", email:"Correo",
+          org:"Organización (opcional)",
+          msg:"Cuéntanos qué buscas (p. ej., cobertura de [ticker], análisis profundo de [sector]).",
+          submit:"Enviar"
+        },
+        footer:{ note:"Marcador de posición" }
+      },
+      fr: {
+        _title:"Telluride Research — Analyses de niveau institutionnel",
+        brand:"Telluride Research",
+        nav:{ products:"Produits", overview:"Aperçu", reports:"Rapports", about:"À propos", contact:"Contact" },
+        hero:{
+          look:"Observer d’abord", then:"Puis investir.",
+          subtitle:"Pôle de recherche actions et M&A. Hypothèses claires, modèles défendables et synthèses concises pour professionnels.",
+          note:"Pas de paywall. Accès d’essai au départ."
+        },
+        cta:{ getStarted:"Commencer" },
+        overview:{ title:"Aperçu", lead:"Cartes illustratives — pas de données en direct." },
+        features:{ title:"Où les pros font leur recherche", lead:"Rédaction précise, modèles rigoureux et rendus prêts à présenter." },
+        reports:{ title:"Derniers rapports", browse:"Parcourir la bibliothèque →" },
+        about:{ title:"À propos de Telluride Research" },
+        contact:{ title:"Contactez-nous", lead:"Demandez un accès, collaborez ou rejoignez l’équipe d’analystes." },
+        form:{
+          first:"Prénom", last:"Nom", email:"E-mail",
+          org:"Organisation (facultatif)",
+          msg:"Dites-nous ce que vous cherchez (ex. couverture [ticker], étude approfondie [secteur]).",
+          submit:"Envoyer"
+        },
+        footer:{ note:"Texte provisoire" }
+      },
+      de: {
+        _title:"Telluride Research — Erkenntnisse auf Institutsniveau",
+        brand:"Telluride Research",
+        nav:{ products:"Produkte", overview:"Überblick", reports:"Berichte", about:"Über uns", contact:"Kontakt" },
+        hero:{
+          look:"Erst schauen", then:"dann investieren.",
+          subtitle:"Research-Hub für Aktien- und M&A-Analysen. Klare Annahmen, belastbare Modelle und prägnante Texte für Profis.",
+          note:"Keine Paywall. Beginnen Sie mit Probezugang."
+        },
+        cta:{ getStarted:"Loslegen" },
+        overview:{ title:"Überblick", lead:"Beispielkarten – keine Live-Daten." },
+        features:{ title:"Wo Profis recherchieren", lead:"Prägnante Texte, strenge Modelle, präsentationsreife Outputs." },
+        reports:{ title:"Neueste Berichte", browse:"Bibliothek durchsuchen →" },
+        about:{ title:"Über Telluride Research" },
+        contact:{ title:"Kontakt aufnehmen", lead:"Zugang anfordern, zusammenarbeiten oder dem Analystenteam beitreten." },
+        form:{
+          first:"Vorname", last:"Nachname", email:"E-Mail",
+          org:"Organisation (optional)",
+          msg:"Worum geht es? (z. B. [Ticker]-Coverage, [Sektor]-Deep-Dive).",
+          submit:"Senden"
+        },
+        footer:{ note:"Platzhalter" }
+      },
+      pt: {
+        _title:"Telluride Research — Insights de nível institucional",
+        brand:"Telluride Research",
+        nav:{ products:"Produtos", overview:"Visão geral", reports:"Relatórios", about:"Sobre", contact:"Contato" },
+        hero:{
+          look:"Observe primeiro", then:"Depois invista.",
+          subtitle:"Hub de pesquisa para ações e M&A. Premissas claras, modelos defensáveis e textos concisos para profissionais.",
+          note:"Sem paywall. Comece com acesso de amostra."
+        },
+        cta:{ getStarted:"Começar" },
+        overview:{ title:"Visão geral", lead:"Cartões ilustrativos — sem dados ao vivo." },
+        features:{ title:"Onde os profissionais pesquisam", lead:"Texto enxuto, modelos rigorosos e materiais prontos para apresentação." },
+        reports:{ title:"Últimos relatórios", browse:"Ver biblioteca →" },
+        about:{ title:"Sobre a Telluride Research" },
+        contact:{ title:"Fale conosco", lead:"Peça acesso, colabore ou junte-se ao time de analistas." },
+        form:{
+          first:"Nome", last:"Sobrenome", email:"E-mail",
+          org:"Organização (opcional)",
+          msg:"Conte o que procura (ex.: cobertura de [ticker], deep-dive de [setor]).",
+          submit:"Enviar"
+        },
+        footer:{ note:"Placeholder" }
+      }
+    };
+
+    const $ = (s, r=document)=>r.querySelector(s);
+    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+    const get = (lang, path)=>path.split('.').reduce((o,k)=>o&&o[k], dict[lang]);
+
+    function apply(lang){
+      const d = dict[lang] || dict.en;
+      $$('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const val = get(lang, key);
+        if (typeof val === 'string') el.textContent = val;
+      });
+      $$('[data-i18n-ph]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-ph');
+        const val = get(lang, key);
+        if (typeof val === 'string') el.setAttribute('placeholder', val);
+      });
+      if (d._title) document.title = d._title;
+      document.documentElement.setAttribute('lang', lang);
+    }
+
+    // init from storage / browser
+    const stored = (()=>{ try{return localStorage.getItem(STORAGE_KEY)}catch(e){return null} })();
+    const browser = (navigator.language || 'en').slice(0,2).toLowerCase();
+    const initial = stored && dict[stored] ? stored : (dict[browser] ? browser : 'en');
+    apply(initial);
+
+    // expose so the menu script can call it
+    window.__applyLang = (code)=>{
+      try{ localStorage.setItem(STORAGE_KEY, code); }catch(e){}
+      apply(code);
+    };
+  })();
   </script>
 </body>
 </html>
