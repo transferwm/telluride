@@ -405,3 +405,45 @@ textarea{resize:vertical; min-height:90px}
 @media (max-width: 560px){
   .form--modal .row-2 { grid-template-columns: 1fr; } /* stack fields on small screens */
 }
+/* Ensure anything with [hidden] never displays */
+[hidden] { display: none !important; }
+
+/* Position the menus relative to the right cluster */
+.nav__right { position: relative; }
+
+/* Popover menu styling (for #langMenu and #acctMenu) */
+.menu{
+  position: absolute;
+  top: 48px;              /* drops just below the header */
+  right: 0;               /* right-align under the icons */
+  min-width: 220px;
+  padding: 8px;
+  background: rgba(16,19,26,.96);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  backdrop-filter: blur(6px);
+  z-index: 70;
+}
+
+/* Items (works for both <button> and <a>) */
+.menu__item{
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #e8eefc;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;        /* for <a> states */
+}
+.menu__item:hover{ background: rgba(255,255,255,.06); }
+.menu__item:active{ background: rgba(255,255,255,.10); }
+.menu__item[disabled]{ opacity:.45; cursor:not-allowed; }
+
+/* Prevent visited links from turning purple inside the menu */
+.menu__item:link,
+.menu__item:visited { color: #e8eefc; text-decoration: none; }
