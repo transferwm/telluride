@@ -10,6 +10,9 @@
   --danger:#ff6b6b;
   --success:#22d1a0;
   --shadow:0 10px 30px rgba(0,0,0,.35);
+
+  /* Search pill height (reduced ~25%) */
+  --search-h:30px;
 }
 
 *{box-sizing:border-box}
@@ -86,17 +89,22 @@ body{
 /* center cluster: search + links */
 .nav__center{display:flex;align-items:center;gap:14px; flex:1; margin:0 10px}
 
-/* pill search like TV */
+/* pill search like TV — height reduced ~25% */
 .search.tv{
   display:flex; align-items:center; gap:8px;
+  height:var(--search-h);
+  padding:0 12px;                  /* vertical padding removed to slim height */
   background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
   border:1px solid rgba(255,255,255,.10);
-  border-radius:999px; padding:8px 12px;
+  border-radius:999px;
   min-width:320px; max-width:520px; flex:1;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
 }
-.search__icon{color:#a9b8d5}
-.search__input{width:100%; background:transparent; border:0; outline:0; color:var(--text); font-weight:500}
+.search__icon{color:#a9b8d5; flex:0 0 auto}
+.search__input{
+  width:100%; background:transparent; border:0; outline:0; color:var(--text); font-weight:500;
+  height:100%; line-height:1; padding:0; margin:0;
+}
 
 /* primary links row */
 .nav__links{display:flex;align-items:center;gap:18px; margin-left:8px}
@@ -107,10 +115,7 @@ body{
 .nav__link:hover{background:rgba(255,255,255,.06)}
 
 /* right cluster */
-.nav__right{
-  display:flex;align-items:center;gap:10px;
-  position:relative; /* anchor popover menus */
-}
+.nav__right{display:flex;align-items:center;gap:10px}
 .iconbtn{
   width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.10);
   background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
@@ -127,39 +132,6 @@ body{
   box-shadow:0 6px 18px rgba(123,151,255,.25);
 }
 .btn--cta:hover{filter:brightness(1.05)}
-
-/* ===== Header popover menus (Language / Account) ===== */
-.menu{
-  position:absolute;
-  top:48px;                 /* under icon buttons */
-  z-index:65;
-  min-width:210px;
-  background:#0e1117;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:12px;
-  box-shadow:0 16px 40px rgba(0,0,0,.45);
-  padding:6px;
-}
-#langMenu{ right:160px; }  /* aligns beneath language icon */
-#acctMenu{ right:110px; }  /* aligns beneath account icon */
-
-.menu__item{
-  width:100%;
-  text-align:left;
-  background:transparent;
-  border:0;
-  color:#d6deed;
-  padding:10px 10px;
-  border-radius:10px;
-  font-weight:600;
-  cursor:pointer;
-  text-decoration:none;    /* for anchor items */
-  display:block;
-}
-.menu__item:hover{ background:rgba(255,255,255,.06); }
-.menu__item[disabled]{
-  opacity:.5; cursor:not-allowed;
-}
 
 /* =========================
    Buttons (shared)
@@ -241,8 +213,8 @@ body{
    FORM (with spacing fix)
 ========================= */
 #contact.section{
-  padding-top:40px;
-  padding-bottom:60px;
+  padding-top:40px;    /* tighter gap above the form */
+  padding-bottom:60px; /* balanced space below */
 }
 
 .form{
@@ -252,13 +224,13 @@ body{
   background:rgba(16,19,26,.55);
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:10px;            /* small vertical gaps between rows */
 }
 
 .form__row{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:10px;            /* small gaps between columns */
 }
 
 input, textarea{
@@ -341,7 +313,7 @@ textarea{resize:vertical; min-height:90px}
 .form--modal .row-2{
   display:grid;
   grid-template-columns:1fr 1fr;  /* 2×2 layout */
-  gap:12px;
+  gap:12px;                       /* space between paired fields */
   margin-bottom:12px;
 }
 
@@ -359,7 +331,7 @@ textarea{resize:vertical; min-height:90px}
   box-sizing:border-box;
 }
 
-/* Title <select> matches inputs */
+/* Match Title <select> to inputs */
 .form--modal .modal__select{
   -webkit-appearance:none;
   appearance:none;
@@ -385,7 +357,7 @@ textarea{resize:vertical; min-height:90px}
   color:#cbd6f1;
   font-size:.95rem;
   line-height:1.2;
-  cursor:pointer;
+  cursor:pointer;             /* whole row clickable */
   user-select:none;
 }
 .modal__checkbox input[type="checkbox"]{
