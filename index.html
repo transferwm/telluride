@@ -66,9 +66,7 @@
 
     <div class="container hero__content">
       <h1 class="hero__title">[INSERT]<span class="slash">/</span>[TEXT HERE]</h1>
-      <p class="hero__subtitle">
-       [INSERT TEXT HERE]
-      </p>
+      <p class="hero__subtitle">[INSERT TEXT HERE]</p>
       <div class="hero__cta">
         <a href="#contact" class="btn btn--primary btn--lg">Get started</a>
         <span class="hero__note">[INSERT TEXT HERE]</span>
@@ -189,7 +187,7 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- ===== CONTACT (Formspree wired) ===== -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section__head">
@@ -197,16 +195,25 @@
         <p class="section__lead">Request access, collaborate, or join the analyst team.</p>
       </div>
 
-      <form class="form glass" method="POST" action="https://formspree.io/f/your-endpoint">
+      <!-- UPDATE THIS ID: YOUR_CONTACT_FORM_ID -->
+      <form class="form glass"
+            method="POST"
+            action="https://formspree.io/f/YOUR_CONTACT_FORM_ID">
         <div class="form__row">
-          <input required name="first_name" placeholder="First name" />
-          <input required name="last_name" placeholder="Last name" />
+          <input required name="first_name" placeholder="First name" autocomplete="given-name" />
+          <input required name="last_name"  placeholder="Last name"  autocomplete="family-name" />
         </div>
         <div class="form__row">
-          <input required type="email" name="email" placeholder="Email" />
-          <input name="org" placeholder="Organization (optional)" />
+          <input required type="email" name="email" placeholder="Email" autocomplete="email" />
+          <input name="org" placeholder="Organization (optional)" autocomplete="organization" />
         </div>
         <textarea name="message" rows="5" placeholder="Tell us what you’re looking for (e.g., [ticker] coverage, [sector] deep-dive)."></textarea>
+
+        <!-- Helpful extras -->
+        <input type="hidden" name="_subject"  value="Telluride site contact">
+        <input type="hidden" name="_redirect" value="https://transferwm.github.io/telluride/thank-you.html">
+        <input type="text"   name="_gotcha"   style="display:none">
+
         <button class="btn btn--primary" type="submit">Submit</button>
       </form>
     </div>
@@ -272,7 +279,7 @@
     })();
   </script>
 
-  <!-- ===== Newsletter Modal ===== -->
+  <!-- ===== Newsletter Modal (Formspree wired) ===== -->
   <div class="modal" id="nlModal" role="dialog" aria-modal="true" aria-labelledby="nlTitle" aria-describedby="nlDesc" hidden>
     <div class="modal__overlay" id="nlOverlay"></div>
 
@@ -287,27 +294,35 @@
           Research notes, model updates, and new coverage—sent occasionally.
         </p>
 
-        <form class="form--modal" method="POST" action="https://formspree.io/f/your-newsletter-endpoint">
+        <!-- UPDATE THIS ID: YOUR_NEWSLETTER_FORM_ID -->
+        <form class="form--modal"
+              method="POST"
+              action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID">
           <div class="row-2">
-            <select class="modal__select" name="title" required aria-label="Title">
+            <select class="modal__select" name="title" required autocomplete="honorific-prefix" aria-label="Title">
               <option value="" disabled selected>Title</option>
               <option>Mr.</option><option>Ms.</option><option>Mx.</option>
               <option>Dr.</option><option>Prof.</option>
               <option>Col.</option><option>Capt.</option><option>Lt.</option><option>Sgt.</option>
               <option>Hon.</option><option>Rev.</option>
             </select>
-            <input name="last_name" placeholder="Last name" required />
+            <input name="last_name" placeholder="Last name" required autocomplete="family-name" />
           </div>
 
           <div class="row-2">
-            <input type="email" name="email" placeholder="Email" required />
-            <input name="organization" placeholder="Organization (optional)" />
+            <input type="email" name="email" placeholder="Email" required autocomplete="email" />
+            <input name="organization" placeholder="Organization (optional)" autocomplete="organization" />
           </div>
 
           <label class="modal__checkbox">
             <input type="checkbox" id="nlDontShow" />
             Don’t show again on this device
           </label>
+
+          <!-- Helpful extras -->
+          <input type="hidden" name="_subject"  value="Telluride newsletter signup">
+          <input type="hidden" name="_redirect" value="https://transferwm.github.io/telluride/thank-you.html">
+          <input type="text"   name="_gotcha"   style="display:none">
 
           <div class="modal__actions">
             <button type="button" class="btn btn--inverse" id="nlDismiss">Not now</button>
